@@ -1,0 +1,30 @@
+$inputColor: rgb(255, 255, 255);
+
+
+.nameFieldSet {
+    border-color: $inputColor;
+}
+
+.manifestFieldSet {
+    border-color: $inputColor
+}
+
+.saveButton {
+    width: 50%;
+    margin-top: 2vh;
+}
+
+.customInput {
+    border-color: $inputColor;
+    color: white;
+    min-width: 14vw;
+    max-width: 14vw;
+}
+
+.customFileInput {
+    background-color: rgb(44, 44, 44);
+    color: white;
+    text-align: center;
+    min-width: 24vw;
+    max-width: 24vw;
+}

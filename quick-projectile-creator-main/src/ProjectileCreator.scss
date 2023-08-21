@@ -1,0 +1,22 @@
+$globalFont: 17px;
+
+.ProjectileCreatorContainer {
+   text-align: center;
+   color: white;
+}
+
+.col-sm-12 {
+    font-size: $globalFont;
+}
+
+
+.customInput {
+
+    font: {
+        size: $globalFont;
+    }
+
+    color: white;
+    min-width: 7vw;
+    max-width: 7vw;
+}
