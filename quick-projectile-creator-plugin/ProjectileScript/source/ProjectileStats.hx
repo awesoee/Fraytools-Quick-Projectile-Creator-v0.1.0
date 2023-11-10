@@ -1,6 +1,6 @@
 // Animation stats for Character Template Projectile
 {
-	spriteContent: self.getResource().getContent("charactertemplateprojectile"),
+	spriteContent: self.getResource().getContent("thissentencerighthereisaplaceholderforregexisntthatcool"),
 	stateTransitionMapOverrides: [
 		PState.ACTIVE => {
 			animation: "projectileIdle"

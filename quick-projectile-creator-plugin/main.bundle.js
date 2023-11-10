@@ -2472,7 +2472,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.ProjectileCreatorContainer {
   color: white;
   min-width: 7vw;
   max-width: 7vw;
-}`, "",{"version":3,"sources":["webpack://./src/ProjectileCreator.scss"],"names":[],"mappings":"AAEA;EACG,kBAAA;EACA,YAAA;AADH;;AAIA;EACI,eARS;AAOb;;AAKA;EAGQ,eAfK;EAkBT,YAAA;EACA,cAAA;EACA,cAAA;AANJ","sourcesContent":["$globalFont: 17px;\r\n\r\n.ProjectileCreatorContainer {\r\n   text-align: center;\r\n   color: white;\r\n}\r\n\r\n.col-sm-12 {\r\n    font-size: $globalFont;\r\n}\r\n\r\n\r\n.customInput {\r\n\r\n    font: {\r\n        size: $globalFont;\r\n    }\r\n\r\n    color: white;\r\n    min-width: 7vw;\r\n    max-width: 7vw;\r\n}"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/ProjectileCreator.scss"],"names":[],"mappings":"AAEA;EACG,kBAAA;EACA,YAAA;AADH;;AAIA;EACI,eARS;AAOb;;AAKA;EAGQ,eAfK;EAkBT,YAAA;EACA,cAAA;EACA,cAAA;AANJ","sourcesContent":["$globalFont: 17px;\n\n.ProjectileCreatorContainer {\n   text-align: center;\n   color: white;\n}\n\n.col-sm-12 {\n    font-size: $globalFont;\n}\n\n\n.customInput {\n\n    font: {\n        size: $globalFont;\n    }\n\n    color: white;\n    min-width: 7vw;\n    max-width: 7vw;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -2525,7 +2525,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.nameFieldSet {
   text-align: center;
   min-width: 24vw;
   max-width: 24vw;
-}`, "",{"version":3,"sources":["webpack://./src/ProjectileCreatorConfig.scss"],"names":[],"mappings":"AAGA;EACI,gCAJS;AAEb;;AAKA;EACI,gCARS;AAMb;;AAKA;EACI,UAAA;EACA,eAAA;AAFJ;;AAKA;EACI,gCAjBS;EAkBT,YAAA;EACA,eAAA;EACA,eAAA;AAFJ;;AAKA;EACI,iCAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAFJ","sourcesContent":["$inputColor: rgb(255, 255, 255);\r\n\r\n\r\n.nameFieldSet {\r\n    border-color: $inputColor;\r\n}\r\n\r\n.manifestFieldSet {\r\n    border-color: $inputColor\r\n}\r\n\r\n.saveButton {\r\n    width: 50%;\r\n    margin-top: 2vh;\r\n}\r\n\r\n.customInput {\r\n    border-color: $inputColor;\r\n    color: white;\r\n    min-width: 14vw;\r\n    max-width: 14vw;\r\n}\r\n\r\n.customFileInput {\r\n    background-color: rgb(44, 44, 44);\r\n    color: white;\r\n    text-align: center;\r\n    min-width: 24vw;\r\n    max-width: 24vw;\r\n}\r\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/ProjectileCreatorConfig.scss"],"names":[],"mappings":"AAGA;EACI,gCAJS;AAEb;;AAKA;EACI,gCARS;AAMb;;AAKA;EACI,UAAA;EACA,eAAA;AAFJ;;AAKA;EACI,gCAjBS;EAkBT,YAAA;EACA,eAAA;EACA,eAAA;AAFJ;;AAKA;EACI,iCAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAFJ","sourcesContent":["$inputColor: rgb(255, 255, 255);\n\n\n.nameFieldSet {\n    border-color: $inputColor;\n}\n\n.manifestFieldSet {\n    border-color: $inputColor\n}\n\n.saveButton {\n    width: 50%;\n    margin-top: 2vh;\n}\n\n.customInput {\n    border-color: $inputColor;\n    color: white;\n    min-width: 14vw;\n    max-width: 14vw;\n}\n\n.customFileInput {\n    background-color: rgb(44, 44, 44);\n    color: white;\n    text-align: center;\n    min-width: 24vw;\n    max-width: 24vw;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -49133,6 +49133,7 @@ class ProjectileCreatorConfig extends React.Component {
                 const projectileAnimationStatsContent = yield projectileAnimationStatsResponse.text();
                 const projectileStatsResponse = yield fetch(projectileStats);
                 const projectileStatsContent = yield projectileStatsResponse.text();
+                const regexProjectileStats = projectileStatsContent.replace(/thissentencerighthereisaplaceholderforregexisntthatcool/g, name);
                 const projectileHitboxStatsResponse = yield fetch(projectileHitboxStats);
                 const projectileHitboxStatsContent = yield projectileHitboxStatsResponse.text();
                 const entityResponse = yield fetch(entityProjectile);
@@ -49198,7 +49199,7 @@ class ProjectileCreatorConfig extends React.Component {
                 subfolder.file(name + 'Script.hx.meta', regexMetaScript);
                 subfolder.file(name + 'AnimationStats.hx', projectileAnimationStatsContent);
                 subfolder.file(name + 'AnimationStats.hx.meta', regexMetaAnimationStats);
-                subfolder.file(name + 'Stats.hx', projectileStatsContent);
+                subfolder.file(name + 'Stats.hx', regexProjectileStats);
                 subfolder.file(name + 'Stats.hx.meta', regexMetaStats);
                 subfolder.file(name + 'HitboxStats.hx', projectileHitboxStatsContent);
                 subfolder.file(name + 'HitboxStats.hx.meta', regexMetaHitboxStats);
