@@ -48984,11 +48984,12 @@ class ProjectileCreatorPlugin extends BaseMetadataDefinitionPlugin_1.default {
                     React.createElement("div", { className: "ProjectileCreatorContainer" },
                         React.createElement("h2", { className: 'title' },
                             "Awesome's Projectile Creator v",
-                            {"version":"0.1.0","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version),
+                            {"version":"0.1.1","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version),
                         " ",
                         React.createElement("br", null),
                         React.createElement("div", { className: 'container' },
                             React.createElement("div", { className: 'row' },
+                              React.createElement("p", null, " If you're using this plugin for anything other than a character, please remember to update the projectile's costumesId!"),
                                 React.createElement("div", { className: "col-sm-12" },
                                     React.createElement(ProjectileCreatorConfig_1.default, { projectileCreator: this.props.configMetadata.projectileCreator, onUpdated: this.onNameFieldUpdated.bind(this) }))))))));
         }
