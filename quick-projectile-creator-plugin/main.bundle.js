@@ -48989,7 +48989,6 @@ class ProjectileCreatorPlugin extends BaseMetadataDefinitionPlugin_1.default {
                         React.createElement("br", null),
                         React.createElement("div", { className: 'container' },
                             React.createElement("div", { className: 'row' },
-                              React.createElement("p", null, " If you're using this plugin for anything other than a character, please remember to update the projectile's costumesId!"),
                                 React.createElement("div", { className: "col-sm-12" },
                                     React.createElement(ProjectileCreatorConfig_1.default, { projectileCreator: this.props.configMetadata.projectileCreator, onUpdated: this.onNameFieldUpdated.bind(this) }))))))));
         }
