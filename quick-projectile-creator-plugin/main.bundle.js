@@ -49205,6 +49205,10 @@ class ProjectileCreatorConfig extends React.Component {
                 subfolder.file(name + 'HitboxStats.hx.meta', regexMetaHitboxStats);
                 const zipBlob = yield zip.generateAsync({ type: 'blob' });
                 (0, file_saver_1.saveAs)(zipBlob, [name] + '.zip');
+                this.manifestField.current.value = null;
+                this.setState({
+                    manifestInput: null
+                });
             }
             catch (error) {
                 console.error('Error:', error);
