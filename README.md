@@ -6,7 +6,7 @@
 
 ![image](https://github.com/user-attachments/assets/0957edb4-f7d5-45eb-aef2-45978c24a7b2)
 
-### Download 
+### Download `quick-projectile-creator-plugin.zip`.
 
 ![image](https://github.com/user-attachments/assets/ba3fa76e-aa34-4825-bd84-49d14e290512)
 
