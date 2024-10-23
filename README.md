@@ -1,6 +1,4 @@
-# How To Download/Use the Quick Projectile Creator:
-
-## How to Download:
+# How To Download the Quick Projectile Creator:
 
 ### Click the latest release under the Releases tab.
 
