@@ -2503,13 +2503,17 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.nameFieldSet {
   border-color: rgb(255, 255, 255);
 }
 
+.costumesIdFieldSet {
+  border-color: rgb(255, 255, 255);
+}
+
 .manifestFieldSet {
   border-color: rgb(255, 255, 255);
 }
 
 .saveButton {
   width: 50%;
-  margin-top: 2vh;
+  margin-top: 1.5vh;
 }
 
 .customInput {
@@ -2525,7 +2529,7 @@ ___CSS_LOADER_EXPORT___.push([module.id, `.nameFieldSet {
   text-align: center;
   min-width: 24vw;
   max-width: 24vw;
-}`, "",{"version":3,"sources":["webpack://./src/ProjectileCreatorConfig.scss"],"names":[],"mappings":"AAGA;EACI,gCAJS;AAEb;;AAKA;EACI,gCARS;AAMb;;AAKA;EACI,UAAA;EACA,eAAA;AAFJ;;AAKA;EACI,gCAjBS;EAkBT,YAAA;EACA,eAAA;EACA,eAAA;AAFJ;;AAKA;EACI,iCAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAFJ","sourcesContent":["$inputColor: rgb(255, 255, 255);\n\n\n.nameFieldSet {\n    border-color: $inputColor;\n}\n\n.manifestFieldSet {\n    border-color: $inputColor\n}\n\n.saveButton {\n    width: 50%;\n    margin-top: 2vh;\n}\n\n.customInput {\n    border-color: $inputColor;\n    color: white;\n    min-width: 14vw;\n    max-width: 14vw;\n}\n\n.customFileInput {\n    background-color: rgb(44, 44, 44);\n    color: white;\n    text-align: center;\n    min-width: 24vw;\n    max-width: 24vw;\n}\n"],"sourceRoot":""}]);
+}`, "",{"version":3,"sources":["webpack://./src/ProjectileCreatorConfig.scss"],"names":[],"mappings":"AAGA;EACI,gCAJS;EAKT,cAAA;AAFJ;;AAKA;EACI,gCATS;AAOb;;AAKA;EACI,gCAbS;AAWb;;AAKA;EACI,UAAA;EACA,iBAAA;AAFJ;;AAKA;EACI,gCAtBS;EAuBT,YAAA;EACA,eAAA;EACA,eAAA;AAFJ;;AAKA;EACI,iCAAA;EACA,YAAA;EACA,kBAAA;EACA,eAAA;EACA,eAAA;AAFJ","sourcesContent":["$inputColor: rgb(255, 255, 255);\n\n\n.nameFieldSet {\n    border-color: $inputColor;\n    margin-top: 0%;\n}\n\n.costumesIdFieldSet {\n    border-color: $inputColor;\n}\n\n.manifestFieldSet {\n    border-color: $inputColor\n}\n\n.saveButton {\n    width: 50%;\n    margin-top: 1.5vh;\n}\n\n.customInput {\n    border-color: $inputColor;\n    color: white;\n    min-width: 14vw;\n    max-width: 14vw;\n}\n\n.customFileInput {\n    background-color: rgb(44, 44, 44);\n    color: white;\n    text-align: center;\n    min-width: 24vw;\n    max-width: 24vw;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -48935,7 +48939,7 @@ class ProjectileCreatorPlugin extends BaseMetadataDefinitionPlugin_1.default {
     }
     static getDefaultSettings() {
         return {
-            version: {"version":"0.1.0","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version,
+            version: {"version":"0.2.0","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version,
             projectileCreator: []
         };
     }
@@ -48984,7 +48988,7 @@ class ProjectileCreatorPlugin extends BaseMetadataDefinitionPlugin_1.default {
                     React.createElement("div", { className: "ProjectileCreatorContainer" },
                         React.createElement("h2", { className: 'title' },
                             "Awesome's Projectile Creator v",
-                            {"version":"0.1.1","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version),
+                            {"version":"0.2.0","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version),
                         " ",
                         React.createElement("br", null),
                         React.createElement("div", { className: 'container' },
@@ -49084,16 +49088,33 @@ class ProjectileCreatorConfig extends React.Component {
                     }
                     if (parsedManifest) {
                         let name = this.nameField.current.value;
-                        const additionalData = {
-                            "id": name,
-                            "type": "projectile",
-                            "objectStatsId": name + 'Stats',
-                            "animationStatsId": name + 'AnimationStats',
-                            "hitboxStatsId": name + 'HitboxStats',
-                            "scriptId": name + 'Script',
-                            "costumesId": "charactertemplateCostumes"
-                        };
-                        const modifiedManifest = Object.assign(Object.assign({}, parsedManifest), { content: [...parsedManifest.content, additionalData] });
+                        let costumesId = this.costumesIdField.current.value;
+                        function interpretAdditionalData() {
+                          var additionalData = {};
+                          if (!costumesId || costumesId === "") {
+                              additionalData = {
+                                  "id": name,
+                                  "type": "projectile",
+                                  "objectStatsId": name + 'Stats',
+                                  "animationStatsId": name + 'AnimationStats',
+                                  "hitboxStatsId": name + 'HitboxStats',
+                                  "scriptId": name + 'Script'
+                              };
+                          }
+                          else {
+                              additionalData = {
+                                  "id": name,
+                                  "type": "projectile",
+                                  "objectStatsId": name + 'Stats',
+                                  "animationStatsId": name + 'AnimationStats',
+                                  "hitboxStatsId": name + 'HitboxStats',
+                                  "scriptId": name + 'Script',
+                                  "costumesId": costumesId
+                              };
+                          }
+                          return additionalData;
+                      }
+                        const modifiedManifest = Object.assign(Object.assign({}, parsedManifest), { content: [...parsedManifest.content, interpretAdditionalData()] });
                         const fileContent = JSON.stringify(modifiedManifest, null, 2);
                         this.setState({ fileContent });
                     }
@@ -49110,7 +49131,8 @@ class ProjectileCreatorConfig extends React.Component {
             }
             this.setState({
                 projectileCreator: [...this.state.projectileCreator, {
-                        name: this.nameField.current.value
+                        name: this.nameField.current.value,
+                        costumesId: this.costumesId.current.value || ""
                     }]
             }, () => {
                 this.onUpdated();
@@ -49221,6 +49243,7 @@ class ProjectileCreatorConfig extends React.Component {
         };
         this.nameField = React.createRef();
         this.manifestField = React.createRef();
+        this.costumesIdField = React.createRef();
     }
     static getDefaults() {
         return {};
@@ -49230,24 +49253,27 @@ class ProjectileCreatorConfig extends React.Component {
     }
     render() {
         return (React.createElement("div", null,
-            React.createElement("div", null,
-                React.createElement("fieldset", { className: 'nameFieldSet' },
-                    React.createElement("label", { htmlFor: 'nameInput' },
-                        React.createElement("h2", null, "Projectile Name")),
-                    React.createElement("input", { className: 'customInput', ref: this.nameField, type: 'text', id: 'nameInput' }),
-                    React.createElement("br", null),
-                    React.createElement("br", null),
-                    React.createElement("br", null)),
-                React.createElement("br", null),
-                React.createElement("fieldset", { className: 'manifestFieldSet' },
-                    React.createElement("label", { htmlFor: 'manifestInput' },
-                        React.createElement("h2", null, "Link MANIFEST.JSON")),
-                    React.createElement("br", null),
-                    React.createElement("input", { className: 'customFileInput', ref: this.manifestField, type: 'file', accept: ".json", id: 'manifestInput', onChange: this.readManifest }),
-                    React.createElement("br", null),
-                    React.createElement("br", null),
-                    React.createElement("br", null)),
-                React.createElement("button", { className: 'saveButton', onClick: this.downloadZIP.bind(this) }, "Save"))));
+          React.createElement("div", null,
+              React.createElement("fieldset", { className: 'nameFieldSet', style: { paddingBottom: 0 } },
+                  React.createElement("label", { htmlFor: 'nameInput' },
+                      React.createElement("h2", { style: { marginTop: -15 } }, "Projectile Name")),
+                  React.createElement("input", { className: 'customInput', ref: this.nameField, type: 'text', id: 'nameInput' }),
+                  React.createElement("br", null),
+                  React.createElement("br", null),
+                  React.createElement("hr", null),
+                  React.createElement("label", { htmlFor: 'costumesIdInput' },
+                      React.createElement("h2", { style: { marginTop: -15 } }, "CostumesID Name")),
+                  React.createElement("input", { className: 'customInput', ref: this.costumesIdField, type: 'text', id: 'costumesIdInput' }),
+                  React.createElement("br", null),
+                  React.createElement("br", null),
+                  React.createElement("hr", null),
+                  React.createElement("label", { htmlFor: 'manifestInput' },
+                      React.createElement("h2", { style: { marginTop: -15 } }, "Link MANIFEST.JSON")),
+                  React.createElement("br", null),
+                  React.createElement("input", { className: 'customFileInput', ref: this.manifestField, type: 'file', accept: ".json", id: 'manifestInput', onChange: this.readManifest }),
+                  React.createElement("br", null),
+                  React.createElement("br", null)),
+              React.createElement("button", { className: 'saveButton', onClick: this.downloadZIP.bind(this) }, "Save"))));
     }
 }
 exports["default"] = ProjectileCreatorConfig;
