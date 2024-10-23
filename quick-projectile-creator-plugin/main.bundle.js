@@ -48986,7 +48986,7 @@ class ProjectileCreatorPlugin extends BaseMetadataDefinitionPlugin_1.default {
             return (React.createElement(React.Fragment, null,
                 React.createElement("body", { style: { backgroundColor: "#111111", } },
                     React.createElement("div", { className: "ProjectileCreatorContainer" },
-                        React.createElement("h2", { className: 'title' },
+                        React.createElement("h2", { className: 'title', style: { marginBottom: 2.5 } },
                             "Awesome's Projectile Creator v",
                             {"version":"0.2.0","type":"MetadataDefinitionPlugin","id":"quick.projectile.creator.plugin","name":"Projectile Creator","description":"test description"}.version),
                         " ",
