@@ -2,7 +2,7 @@
 
 ### Click the latest release under the Releases tab.
 
-![image](https://github.com/user-attachments/assets/0957edb4-f7d5-45eb-aef2-45978c24a7b2)
+![image](https://github.com/user-attachments/assets/7301d4bb-3ecc-475f-952d-c18ca29a3593)
 
 ### Download `quick-projectile-creator-plugin.zip`.
 
