@@ -6,7 +6,7 @@
 
 ### Download `quick-projectile-creator-plugin.zip`.
 
-![image](https://github.com/user-attachments/assets/1f0d7245-228a-4e7a-9351-0995cd3ffdbc)
+![image](https://github.com/user-attachments/assets/7152ce4a-c4cb-4196-9e83-1f8375347dfa)
 
 
 ### Extract the zipped folder to your plugins folder under FrayToolsData.
